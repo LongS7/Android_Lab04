@@ -1,5 +1,6 @@
 package com.example.android_lab04;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,9 +15,9 @@ import java.util.List;
 import java.util.Locale;
 
 public class ProductGridAdapter extends BaseAdapter {
-    private Context context;
-    private List<Product> productList;
-    private NumberFormat numberFormat;
+    private final Context context;
+    private final List<Product> productList;
+    private final NumberFormat numberFormat;
 
     public ProductGridAdapter(Context context, List<Product> shopList) {
         this.context = context;
@@ -39,6 +40,7 @@ public class ProductGridAdapter extends BaseAdapter {
         return 0;
     }
 
+    @SuppressLint({"SetTextI18n", "ViewHolder"})
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         convertView = LayoutInflater.from(context).inflate(R.layout.product_item, parent, false);

@@ -4,10 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.text.NumberFormat;
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements SendData {
 

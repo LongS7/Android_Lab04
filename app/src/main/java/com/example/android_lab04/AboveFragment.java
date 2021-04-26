@@ -85,25 +85,19 @@ public class AboveFragment extends Fragment {
 
         price = Double.parseDouble(textPrice);
 
-        imgAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                quantity ++;
-                tvQuantity.setText(String.valueOf(quantity));
-                sendData.send(price, quantity);
-            }
+        imgAdd.setOnClickListener(v -> {
+            quantity ++;
+            tvQuantity.setText(String.valueOf(quantity));
+            sendData.send(price, quantity);
         });
 
-        imgSub.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(quantity < 1)
-                    return;
+        imgSub.setOnClickListener(v -> {
+            if(quantity < 1)
+                return;
 
-                quantity --;
-                tvQuantity.setText(String.valueOf(quantity));
-                sendData.send(price, quantity);
-            }
+            quantity --;
+            tvQuantity.setText(String.valueOf(quantity));
+            sendData.send(price, quantity);
         });
 
         // Inflate the layout for this fragment

@@ -10,8 +10,6 @@ import java.util.List;
 
 public class ShopListActivity extends AppCompatActivity {
 
-    private ListView listView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +26,7 @@ public class ShopListActivity extends AppCompatActivity {
         );
 
         ShopListAdapter shopListAdapter = new ShopListAdapter(this, shops);
-        listView = findViewById(R.id.listView);
+        ListView listView = findViewById(R.id.listView);
         listView.setAdapter(shopListAdapter);
 
     }
