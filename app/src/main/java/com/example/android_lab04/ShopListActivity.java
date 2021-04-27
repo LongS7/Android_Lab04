@@ -3,7 +3,10 @@ package com.example.android_lab04;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.List;
@@ -28,6 +31,10 @@ public class ShopListActivity extends AppCompatActivity {
         ShopListAdapter shopListAdapter = new ShopListAdapter(this, shops);
         ListView listView = findViewById(R.id.listView);
         listView.setAdapter(shopListAdapter);
+
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            Toast.makeText(this, shops.get(position).getName(), Toast.LENGTH_SHORT).show();
+        });
 
     }
 }

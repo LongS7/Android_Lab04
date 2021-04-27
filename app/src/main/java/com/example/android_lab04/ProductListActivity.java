@@ -3,7 +3,10 @@ package com.example.android_lab04;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.List;
@@ -29,5 +32,9 @@ public class ProductListActivity extends AppCompatActivity {
 
         gridView = findViewById(R.id.grid_view);
         gridView.setAdapter(productGridAdapter);
+
+        gridView.setOnItemClickListener((parent, view, position, id) -> {
+            Toast.makeText(this, products.get(position).getName(), Toast.LENGTH_SHORT).show();
+        });
     }
 }
